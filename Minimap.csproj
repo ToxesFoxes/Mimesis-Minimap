@@ -651,9 +651,6 @@
 		<Reference Include="VorbisPluginImpl">
 			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\VorbisPluginImpl.dll</HintPath>
 		</Reference>
-		<Reference Include="websocket-sharp">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\websocket-sharp.dll</HintPath>
-		</Reference>
 		<Reference Include="zxing.unity">
 			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\zxing.unity.dll</HintPath>
 		</Reference>
@@ -672,7 +669,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Include="API\ActorAPI.cs" />
 		<Compile Include="Core.cs" />
+		<Compile Include="API\HubAPI.cs" />
+		<Compile Include="API\UnityObjectAPI.cs" />
+		<Compile Include="Helpers.cs" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
