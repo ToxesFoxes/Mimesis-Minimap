@@ -7,7 +7,6 @@ namespace Minimap.API
         public static Hub GetHub()
         {
             var hub = Hub.s;
-            MelonLogger.Msg($"[HubAPI] Hub instance: {(hub != null ? "Found" : "Not Found")}");
             return Hub.s;
         }
 
