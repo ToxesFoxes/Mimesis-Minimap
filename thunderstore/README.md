@@ -5,7 +5,7 @@ Simple minimap mod for MIMESIS game.
 [![Thunderstore](https://img.shields.io/badge/Thunderstore-Available-blueviolet)](https://thunderstore.io/c/mimesis/p/ToxesFoxes/Minimap/)
 [![GitHub Release](https://img.shields.io/github/v/release/ToxesFoxes/Mimesis-Minimap?label=GitHub%20Release&color=orange)](https://github.com/ToxesFoxes/Mimesis-Minimap/releases)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.2-blue)
 ![Game](https://img.shields.io/badge/game-MIMESIS-purple)
 ![MelonLoader](https://img.shields.io/badge/MelonLoader-0.7.1+-green)
 ![Status](https://img.shields.io/badge/status-working-brightgreen)
