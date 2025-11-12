@@ -7,7 +7,7 @@ using System.Collections;
 using Minimap.API;
 using Mimic.Actors;
 
-[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.1", "ToxesFoxes", null)]
+[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.2", "ToxesFoxes", null)]
 [assembly: MelonGame("ReLUGames", "MIMESIS")]
 
 namespace MiniMap

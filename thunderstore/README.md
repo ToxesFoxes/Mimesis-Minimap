@@ -14,6 +14,8 @@ Simple minimap mod for MIMESIS game.
 
 The mod adds minimap functionality for easier navigation.
 
+Press F4 to toggle minimap visibility.
+
 ## 🎯 Who Needs This Mod?
 
 ### ✅ **ONLY THE CLIENT** needs to install this mod!
