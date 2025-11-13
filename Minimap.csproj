@@ -670,6 +670,7 @@
 
 	<ItemGroup>
 		<Compile Include="API\ActorAPI.cs" />
+		<Compile Include="API\Compass.cs" />
 		<Compile Include="Core.cs" />
 		<Compile Include="API\HubAPI.cs" />
 		<Compile Include="API\UnityObjectAPI.cs" />

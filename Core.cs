@@ -30,6 +30,8 @@ namespace MiniMap
         private static float nearClipPlane = 1f; // Смещение ближней части камеры
         private static float farClipPlane = 20f; // Смещение дальней части камеры
 
+        private static CompassAPI compass = new CompassAPI();
+
         public override void OnInitializeMelon()
         {
             MelonLogger.Msg("MiniMap initialized. Press F4 to toggle minimap.");
@@ -71,8 +73,6 @@ namespace MiniMap
             CreateRoot();
             CreateCamera();
             CreateUI();
-
-            MelonLogger.Msg("Minimap recreated successfully after scene load.");
         }
 
         private static void SetupInput()
@@ -88,11 +88,11 @@ namespace MiniMap
         {
             if (mapCanvasObj != null)
             {
+                compass.DestroyCompass();
                 GameObject.Destroy(mapCanvasObj);
                 mapCanvasObj = null;
                 mapImage = null;
             }
-            MelonLogger.Msg("MiniMap UI destroyed.");
         }
 
         private static void DestroyCamera()
@@ -106,7 +106,6 @@ namespace MiniMap
                 mapCamera = null;
                 mapTexture = null;
             }
-            MelonLogger.Msg("MiniMap Camera destroyed.");
         }
 
         private static void DestroyRoot()
@@ -116,7 +115,6 @@ namespace MiniMap
                 GameObject.Destroy(mapRootObj);
                 mapRootObj = null;
             }
-            MelonLogger.Msg("MiniMap Root destroyed.");
         }
 
         private static void ToggleMap()
@@ -156,7 +154,6 @@ namespace MiniMap
             if (mapRootObj != null) return;
             mapRootObj = new GameObject("MiniMapRoot");
             UnityEngine.Object.DontDestroyOnLoad(mapRootObj);
-            MelonLogger.Msg("MiniMap Root created and set to DontDestroyOnLoad.");
         }
 
         private static void CreateCamera()
@@ -180,8 +177,6 @@ namespace MiniMap
             // Настройка обрезки камеры
             mapCamera.nearClipPlane = isInDungeon ? nearClipPlane : 0.1f;
             mapCamera.farClipPlane = isInDungeon ? farClipPlane : 100f;
-
-            MelonLogger.Msg("MiniMap Camera created successfully with FullBright lighting.");
         }
 
         private static void CreateUI()
@@ -221,12 +216,12 @@ namespace MiniMap
             mapRect.offsetMin = new Vector2(5f, 5f);
             mapRect.offsetMax = new Vector2(-5f, -5f);
 
-            MelonLogger.Msg("MiniMap UI created successfully with green filter applied.");
+            compass.CreateCompass(bgObj.transform);
         }
 
         public static ProtoActor GetCurrentSpectatingActor()
         {
-            var alivePlayers = ActorAPI.GetAlivePlayers(); 
+            var alivePlayers = ActorAPI.GetAlivePlayers();
             if (alivePlayers.Length != 0)
             {
                 var cameraManager = HubAPI.GetCameraManager();
@@ -320,6 +315,8 @@ namespace MiniMap
                 {
                     mapImage.material = null;
                 }
+
+                compass.UpdateCompass(player);
             }
         }
     }
