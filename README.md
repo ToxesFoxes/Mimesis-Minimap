@@ -5,7 +5,7 @@ Simple minimap mod for MIMESIS game.
 [![Thunderstore](https://img.shields.io/badge/Thunderstore-Available-blueviolet)](https://thunderstore.io/c/mimesis/p/ToxesFoxes/Minimap/)
 [![GitHub Release](https://img.shields.io/github/v/release/ToxesFoxes/Mimesis-Minimap?label=GitHub%20Release&color=orange)](https://github.com/ToxesFoxes/Mimesis-Minimap/releases)
 
-![Version](https://img.shields.io/badge/version-1.0.2-blue)
+![Version](https://img.shields.io/badge/version-1.0.3-blue)
 ![Game](https://img.shields.io/badge/game-MIMESIS-purple)
 ![MelonLoader](https://img.shields.io/badge/MelonLoader-0.7.1+-green)
 ![Status](https://img.shields.io/badge/status-working-brightgreen)
@@ -15,6 +15,8 @@ Simple minimap mod for MIMESIS game.
 The mod adds minimap functionality for easier navigation.
 
 Press F4 to toggle minimap visibility.
+
+![How it Works](https://github.com/ToxesFoxes/Mimesis-Minimap/blob/main/how_it_works.png?raw=true)
 
 ## 🎯 Who Needs This Mod?
 

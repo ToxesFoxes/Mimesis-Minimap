@@ -400,4 +400,5 @@ FodyWeavers.xsd
 
 # Release
 thunderstore/*.dll
+thunderstore/*.md
 Release-thunderstore.zip
