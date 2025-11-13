@@ -1,12 +1,11 @@
-﻿using MelonLoader;
-using Mimic.Actors;
+﻿using Mimic.Actors;
+using Minimap.API;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-namespace Minimap.API
+namespace Minimap
 {
-    internal class CompassAPI
+    internal class Compass
     {
         private List<Vector3> teleporterPositions = new List<Vector3>();
         private GameObject compassObj;
@@ -21,7 +20,7 @@ namespace Minimap.API
         {
             if (compassObj != null)
             {
-                GameObject.Destroy(compassObj);
+                UnityEngine.Object.Destroy(compassObj);
                 compassObj = null;
                 northText = eastText = southText = westText = null;
             }
@@ -117,7 +116,7 @@ namespace Minimap.API
             float halfH = (h + heightOffset) / 2f - margin;
             float absDx = Mathf.Abs(dx);
             float absDy = Mathf.Abs(dy);
-            float scale = (absDx * halfH > absDy * halfW) ? halfW / absDx : halfH / absDy;
+            float scale = absDx * halfH > absDy * halfW ? halfW / absDx : halfH / absDy;
             return new Vector2(dx * scale, dy * scale) + offset;
         }
 

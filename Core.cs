@@ -7,7 +7,7 @@ using System.Collections;
 using Minimap.API;
 using Mimic.Actors;
 
-[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.3", "ToxesFoxes", null)]
+[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.4", "ToxesFoxes", null)]
 [assembly: MelonGame("ReLUGames", "MIMESIS")]
 
 namespace MiniMap
@@ -30,7 +30,7 @@ namespace MiniMap
         private static float nearClipPlane = 1f; // Смещение ближней части камеры
         private static float farClipPlane = 20f; // Смещение дальней части камеры
 
-        private static CompassAPI compass = new CompassAPI();
+        private static readonly Minimap.Compass compass = new();
 
         public override void OnInitializeMelon()
         {

@@ -6,8 +6,8 @@
 		<RootNamespace>Minimap</RootNamespace>
 		<LangVersion>default</LangVersion>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>1.0.3</AssemblyVersion>
-		<FileVersion>1.0.3</FileVersion>
+		<AssemblyVersion>1.0.4</AssemblyVersion>
+		<FileVersion>1.0.4</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyName>Minimap</AssemblyName>
 		<LangVersion>latest</LangVersion>
@@ -670,7 +670,7 @@
 
 	<ItemGroup>
 		<Compile Include="API\ActorAPI.cs" />
-		<Compile Include="API\Compass.cs" />
+		<Compile Include="Compass.cs" />
 		<Compile Include="Core.cs" />
 		<Compile Include="API\HubAPI.cs" />
 		<Compile Include="API\UnityObjectAPI.cs" />
