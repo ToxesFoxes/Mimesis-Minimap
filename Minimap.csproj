@@ -6,8 +6,8 @@
 		<RootNamespace>Minimap</RootNamespace>
 		<LangVersion>default</LangVersion>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>1.0.4</AssemblyVersion>
-		<FileVersion>1.0.4</FileVersion>
+		<AssemblyVersion>1.0.5</AssemblyVersion>
+		<FileVersion>1.0.5</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyName>Minimap</AssemblyName>
 		<LangVersion>latest</LangVersion>

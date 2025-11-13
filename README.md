@@ -5,7 +5,7 @@ Simple minimap mod for MIMESIS game.
 [![Thunderstore](https://img.shields.io/badge/Thunderstore-Available-blueviolet)](https://thunderstore.io/c/mimesis/p/ToxesFoxes/Minimap/)
 [![GitHub Release](https://img.shields.io/github/v/release/ToxesFoxes/Mimesis-Minimap?label=GitHub%20Release&color=orange)](https://github.com/ToxesFoxes/Mimesis-Minimap/releases)
 
-![Version](https://img.shields.io/badge/version-1.0.3-blue)
+![Version](https://img.shields.io/badge/version-1.0.5-blue)
 ![Game](https://img.shields.io/badge/game-MIMESIS-purple)
 ![MelonLoader](https://img.shields.io/badge/MelonLoader-0.7.1+-green)
 ![Status](https://img.shields.io/badge/status-working-brightgreen)
@@ -13,8 +13,6 @@ Simple minimap mod for MIMESIS game.
 ## 📖 Description
 
 The mod adds minimap functionality for easier navigation.
-
-Press F4 to toggle minimap visibility.
 
 ![How it Works](https://github.com/ToxesFoxes/Mimesis-Minimap/blob/main/how_it_works.png?raw=true)
 
@@ -27,6 +25,8 @@ Press F4 to toggle minimap visibility.
 - ✅ Minimap display
 - ✅ Night vision mode in dungeon
 - ✅ Orthographic map view
+- ✅ Toggle minimap visibility with F4
+- ✅ Compass direction indicator like in-game item
 
 ## 📋 Requirements
 
@@ -86,6 +86,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## 📞 Support
 
-- 🐛 [Report Issues](../../issues)
-- 💬 [Discussions](../../discussions)
+- 🐛 [Report Issues](https://github.com/ToxesFoxes/Mimesis-Minimap/issues)
 - 📧 Contact: toxes_foxes@outlook.com
