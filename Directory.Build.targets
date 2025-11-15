@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
+		<MakeDir Condition="!Exists('$(ModPath)')" Directories="$(ModPath)" />
+		<Exec Condition="Exists('$(ModPath)')" Command="cmd /c copy &quot;$(TargetPath)&quot; &quot;$(ModPath)&quot;" ContinueOnError="true" />
+	</Target>
+</Project>

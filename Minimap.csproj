@@ -6,661 +6,663 @@
 		<RootNamespace>Minimap</RootNamespace>
 		<LangVersion>default</LangVersion>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>1.0.5</AssemblyVersion>
-		<FileVersion>1.0.5</FileVersion>
+		<Version>1.1.0</Version>
+		<AssemblyVersion>1.1.0.0</AssemblyVersion>
+		<FileVersion>1.1.0.0</FileVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyName>Minimap</AssemblyName>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Platforms>x64</Platforms>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
 		<Reference Include="AllIn1SpriteShaderAssembly">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\AllIn1SpriteShaderAssembly.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\AllIn1SpriteShaderAssembly.dll</HintPath>
 		</Reference>
 		<Reference Include="Appccelerate.StateMachine">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Appccelerate.StateMachine.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Appccelerate.StateMachine.dll</HintPath>
 		</Reference>
 		<Reference Include="Assembly-CSharp-firstpass">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Assembly-CSharp-firstpass.dll</HintPath>
 		</Reference>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="Autodesk.Fbx.BuildTestAssets">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Autodesk.Fbx.BuildTestAssets.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Autodesk.Fbx.BuildTestAssets.dll</HintPath>
 		</Reference>
 		<Reference Include="Autodesk.Fbx">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Autodesk.Fbx.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Autodesk.Fbx.dll</HintPath>
 		</Reference>
 		<Reference Include="CodeStage.Maintainer.Demo">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\CodeStage.Maintainer.Demo.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\CodeStage.Maintainer.Demo.dll</HintPath>
 		</Reference>
 		<Reference Include="com.krafton.gpp.sdk.unity">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\com.krafton.gpp.sdk.unity.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\com.krafton.gpp.sdk.unity.dll</HintPath>
 		</Reference>
 		<Reference Include="com.krafton.gpp.sdk.unity.steam">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\com.krafton.gpp.sdk.unity.steam.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\com.krafton.gpp.sdk.unity.steam.dll</HintPath>
 		</Reference>
 		<Reference Include="com.rlabrecque.steamworks.net">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\com.rlabrecque.steamworks.net.dll</HintPath>
 		</Reference>
 		<Reference Include="com.Tivadar.Best.HTTP">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\com.Tivadar.Best.HTTP.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\com.Tivadar.Best.HTTP.dll</HintPath>
 		</Reference>
 		<Reference Include="com.Tivadar.Best.TLSSecurity">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\com.Tivadar.Best.TLSSecurity.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\com.Tivadar.Best.TLSSecurity.dll</HintPath>
 		</Reference>
 		<Reference Include="Crc32.NET">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Crc32.NET.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Crc32.NET.dll</HintPath>
 		</Reference>
 		<Reference Include="DemiLib">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DemiLib.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DemiLib.dll</HintPath>
 		</Reference>
 		<Reference Include="DissonanceVoip">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DissonanceVoip.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DissonanceVoip.dll</HintPath>
 		</Reference>
 		<Reference Include="DissonanceVoip.FishNet">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DissonanceVoip.FishNet.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DissonanceVoip.FishNet.dll</HintPath>
 		</Reference>
 		<Reference Include="DOTween">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DOTween.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DOTween.dll</HintPath>
 		</Reference>
 		<Reference Include="DOTween.Modules">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DOTween.Modules.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DOTween.Modules.dll</HintPath>
 		</Reference>
 		<Reference Include="DOTweenPro">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DOTweenPro.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DOTweenPro.dll</HintPath>
 		</Reference>
 		<Reference Include="DOTweenPro.Scripts">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\DOTweenPro.Scripts.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\DOTweenPro.Scripts.dll</HintPath>
 		</Reference>
 		<Reference Include="EZhex1991.EZSoftBone">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\EZhex1991.EZSoftBone.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\EZhex1991.EZSoftBone.dll</HintPath>
 		</Reference>
 		<Reference Include="FishNet.CodeAnalysis">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\FishNet.CodeAnalysis.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\FishNet.CodeAnalysis.dll</HintPath>
 		</Reference>
 		<Reference Include="FishNet.Demos">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\FishNet.Demos.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\FishNet.Demos.dll</HintPath>
 		</Reference>
 		<Reference Include="FishNet.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\FishNet.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\FishNet.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="GameKit.Dependencies">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\GameKit.Dependencies.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\GameKit.Dependencies.dll</HintPath>
 		</Reference>
 		<Reference Include="Google.Protobuf">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Google.Protobuf.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Google.Protobuf.dll</HintPath>
 		</Reference>
 		<Reference Include="Google.Protobuf_Packed">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Google.Protobuf_Packed.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Google.Protobuf_Packed.dll</HintPath>
 		</Reference>
 		<Reference Include="Grpc.Core.Api">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Grpc.Core.Api.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Grpc.Core.Api.dll</HintPath>
 		</Reference>
 		<Reference Include="Grpc.Net.Client">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Grpc.Net.Client.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Grpc.Net.Client.dll</HintPath>
 		</Reference>
 		<Reference Include="Grpc.Net.Common">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Grpc.Net.Common.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Grpc.Net.Common.dll</HintPath>
 		</Reference>
 		<Reference Include="Lofelt.NiceVibrations.Demo">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Lofelt.NiceVibrations.Demo.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Lofelt.NiceVibrations.Demo.dll</HintPath>
 		</Reference>
 		<Reference Include="Lofelt.NiceVibrations">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Lofelt.NiceVibrations.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Lofelt.NiceVibrations.dll</HintPath>
 		</Reference>
 		<Reference Include="MagicaCloth">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\MagicaCloth.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\MagicaCloth.dll</HintPath>
 		</Reference>
 		<Reference Include="MemoryPack.Core">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\MemoryPack.Core.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\MemoryPack.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Configuration.Abstractions">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Configuration.Binder">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Configuration">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Configuration.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.DependencyInjection">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.DependencyInjection.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Http">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Http.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Http.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Logging.Abstractions">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Logging">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Logging.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Logging.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.ObjectPool">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.ObjectPool.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.ObjectPool.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Options">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Options.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Options.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Extensions.Primitives">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Microsoft.Extensions.Primitives.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Microsoft.Extensions.Primitives.dll</HintPath>
 		</Reference>
 		<Reference Include="MoreMountains.Tools">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\MoreMountains.Tools.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\MoreMountains.Tools.dll</HintPath>
 		</Reference>
 		<Reference Include="Newtonsoft.Json">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Newtonsoft.Json.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Newtonsoft.Json.dll</HintPath>
 		</Reference>
 		<Reference Include="NonConvexCollider">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\NonConvexCollider.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\NonConvexCollider.dll</HintPath>
 		</Reference>
 		<Reference Include="NonConvexColliderRuntimeAPI">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\NonConvexColliderRuntimeAPI.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\NonConvexColliderRuntimeAPI.dll</HintPath>
 		</Reference>
 		<Reference Include="OccaSoftware.Buto.Demo">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\OccaSoftware.Buto.Demo.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\OccaSoftware.Buto.Demo.dll</HintPath>
 		</Reference>
 		<Reference Include="OccaSoftware.Buto.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\OccaSoftware.Buto.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\OccaSoftware.Buto.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="OccaSoftware.Buto.Shaders">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\OccaSoftware.Buto.Shaders.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\OccaSoftware.Buto.Shaders.dll</HintPath>
 		</Reference>
 		<Reference Include="prometheus-net.DotNetRuntime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\prometheus-net.DotNetRuntime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\prometheus-net.DotNetRuntime.dll</HintPath>
 		</Reference>
 		<Reference Include="Prometheus.NetStandard">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Prometheus.NetStandard.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Prometheus.NetStandard.dll</HintPath>
 		</Reference>
 		<Reference Include="RTLTMPro">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\RTLTMPro.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\RTLTMPro.dll</HintPath>
 		</Reference>
 		<Reference Include="RuntimeTestAssembly">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\RuntimeTestAssembly.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\RuntimeTestAssembly.dll</HintPath>
 		</Reference>
 		<Reference Include="sc.posteffects.runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\sc.posteffects.runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\sc.posteffects.runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Shared">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Shared.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Shared.dll</HintPath>
 		</Reference>
 		<Reference Include="Timeline.Samples.Annotation">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Timeline.Samples.Annotation.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Timeline.Samples.Annotation.dll</HintPath>
 		</Reference>
 		<Reference Include="Timeline.Samples.Text">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Timeline.Samples.Text.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Timeline.Samples.Text.dll</HintPath>
 		</Reference>
 		<Reference Include="Timeline.Samples.TimeDilation">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Timeline.Samples.TimeDilation.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Timeline.Samples.TimeDilation.dll</HintPath>
 		</Reference>
 		<Reference Include="Timeline.Samples.Tween">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Timeline.Samples.Tween.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Timeline.Samples.Tween.dll</HintPath>
 		</Reference>
 		<Reference Include="Timeline.Samples.Utilities">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Timeline.Samples.Utilities.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Timeline.Samples.Utilities.dll</HintPath>
 		</Reference>
 		<Reference Include="Timeline.Samples.Video">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Timeline.Samples.Video.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Timeline.Samples.Video.dll</HintPath>
 		</Reference>
 		<Reference Include="UniTask.Addressables">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UniTask.Addressables.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UniTask.Addressables.dll</HintPath>
 		</Reference>
 		<Reference Include="UniTask">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UniTask.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UniTask.dll</HintPath>
 		</Reference>
 		<Reference Include="UniTask.DOTween">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UniTask.DOTween.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UniTask.DOTween.dll</HintPath>
 		</Reference>
 		<Reference Include="UniTask.Linq">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UniTask.Linq.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UniTask.Linq.dll</HintPath>
 		</Reference>
 		<Reference Include="UniTask.TextMeshPro">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UniTask.TextMeshPro.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UniTask.TextMeshPro.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.AI.Navigation">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.AI.Navigation.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.AI.Navigation.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Burst">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Burst.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Burst.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Burst.Unsafe">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Burst.Unsafe.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Cinemachine">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Cinemachine.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Cinemachine.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Collections">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Collections.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Collections.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Collections.LowLevel.ILSupport">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Formats.Fbx.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Formats.Fbx.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Formats.Fbx.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.InputSystem">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.InputSystem.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.InputSystem.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.InputSystem.ForUI">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.InputSystem.ForUI.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.InputSystem.ForUI.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Jobs">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Jobs.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Jobs.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Mathematics">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Mathematics.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Mathematics.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ML-Agents.CommunicatorObjects">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ML-Agents">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.ML-Agents.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.ML-Agents.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ML-Agents.Extensions">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.ML-Agents.Extensions.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.ML-Agents.Extensions.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.ML-Agents.Extensions.Input">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.ML-Agents.Extensions.Input.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.ML-Agents.Extensions.Input.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Center.Common">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Center.Common.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Center.Common.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Playmode.Common.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Playmode.Common.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Playmode.Common.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Playmode">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Playmode.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Playmode.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.Adapters">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.Adapters.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.Adapters.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.Common">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.Common.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.Common.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.Initialization">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.Initialization.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.Initialization.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.MetricEvents">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.MetricEvents.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.MetricEvents.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.MetricTestData">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.MetricTestData.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.MetricTestData.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.MetricTypes">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.MetricTypes.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.MetricTypes.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetStats">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Component">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetStatsMonitor.Component.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetStatsMonitor.Component.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Configuration">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetStatsMonitor.Configuration.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetStatsMonitor.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Implementation">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetStatsMonitor.Implementation.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetStatsMonitor.Implementation.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetStatsReporting">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetStatsReporting.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetStatsReporting.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetVis.Configuration">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetVis.Configuration.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetVis.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetworkProfiler.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetworkProfiler.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Polybrush">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Polybrush.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Polybrush.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Postprocessing.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Postprocessing.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Profiling.Core">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Profiling.Core.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Profiling.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Recorder.Base">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Recorder.Base.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Recorder.Base.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Recorder">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Recorder.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Recorder.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Rendering.LightTransport.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Core.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Core.Runtime.Shared">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Universal.Runtime">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.RenderPipelines.Universal.Shaders">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Sentis">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Sentis.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Sentis.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Sentis.ONNX">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Sentis.ONNX.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Sentis.ONNX.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.CloudDiagnostics">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.CloudDiagnostics.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.CloudDiagnostics.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Analytics">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Analytics.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Analytics.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Components">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Components.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Components.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Configuration">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Configuration.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Configuration.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Device">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Device.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Device.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Environments">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Environments.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Environments.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Environments.Internal">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Environments.Internal.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Environments.Internal.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Internal">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Internal.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Internal.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Networking">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Networking.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Networking.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Registration">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Registration.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Registration.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Scheduler">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Scheduler.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Scheduler.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Telemetry">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Telemetry.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Telemetry.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Services.Core.Threading">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Services.Core.Threading.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Services.Core.Threading.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Splines">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Splines.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Splines.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.TextMeshPro">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.TextMeshPro.dll</HintPath>
 		</Reference>
 		<Reference Include="Unity.Timeline">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\Unity.Timeline.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\Unity.Timeline.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AccessibilityModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AccessibilityModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AIModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AMDModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AMDModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AMDModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AndroidJNIModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AndroidJNIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AnimationModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AnimationModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ARModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ARModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AssetBundleModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AssetBundleModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AudioModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.AudioModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ClothModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ClothModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ClusterInputModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ClusterInputModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ClusterRendererModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ClusterRendererModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ContentLoadModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ContentLoadModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.CoreModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CrashReportingModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.CrashReportingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.DirectorModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.DirectorModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.DSPGraphModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.DSPGraphModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GameCenterModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.GameCenterModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GIModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.GIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GraphicsStateCollectionSerializerModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.GraphicsStateCollectionSerializerModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.GraphicsStateCollectionSerializerModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.GridModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.GridModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.HierarchyCoreModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.HierarchyCoreModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.HierarchyCoreModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.HotReloadModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.HotReloadModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ImageConversionModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ImageConversionModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.IMGUIModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.IMGUIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.InputForUIModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.InputForUIModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.InputForUIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.InputLegacyModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.InputLegacyModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.InputModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.InputModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.JSONSerializeModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.JSONSerializeModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.LocalizationModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.LocalizationModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.MarshallingModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.MarshallingModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.MarshallingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.MultiplayerModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.MultiplayerModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.MultiplayerModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.NVIDIAModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.NVIDIAModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ParticleSystemModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ParticleSystemModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.PerformanceReportingModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.PerformanceReportingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.Physics2DModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.Physics2DModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.PhysicsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.PhysicsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.PropertiesModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.PropertiesModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ScreenCaptureModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ScreenCaptureModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ShaderVariantAnalyticsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.ShaderVariantAnalyticsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.ShaderVariantAnalyticsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SharedInternalsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.SharedInternalsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SpriteMaskModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.SpriteMaskModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SpriteShapeModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.SpriteShapeModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.StreamingModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.StreamingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SubstanceModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.SubstanceModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.SubsystemsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.SubsystemsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TerrainModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TerrainModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TerrainPhysicsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TerrainPhysicsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextCoreFontEngineModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextCoreTextEngineModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextRenderingModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TilemapModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TilemapModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TLSModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.TLSModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UI">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UI.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UI.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UIElementsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UIElementsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UIModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UIModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UmbraModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UmbraModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityAnalyticsModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityAnalyticsModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityConnectModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityConnectModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityCurlModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityCurlModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityTestProtocolModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityTestProtocolModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestAudioModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityWebRequestModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestTextureModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UnityWebRequestWWWModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VehiclesModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.VehiclesModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VFXModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.VFXModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VideoModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.VideoModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VirtualTexturingModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.VirtualTexturingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.VRModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.VRModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.WindModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.WindModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.XRModule">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\UnityEngine.XRModule.dll</HintPath>
 		</Reference>
 		<Reference Include="VorbisPluginImpl">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\VorbisPluginImpl.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\VorbisPluginImpl.dll</HintPath>
 		</Reference>
 		<Reference Include="zxing.unity">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MIMESIS_Data\Managed\zxing.unity.dll</HintPath>
+			<HintPath>$(GameAssemblyPath)\zxing.unity.dll</HintPath>
 		</Reference>
 		<Reference Include="MelonLoader">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MelonLoader\net35\MelonLoader.dll</HintPath>
+			<HintPath>$(MelonLoaderPath)\MelonLoader.dll</HintPath>
 		</Reference>
 		<Reference Include="0Harmony">
-			<HintPath>F:\Games\steamapps\common\MIMESIS\MelonLoader\net35\0Harmony.dll</HintPath>
+			<HintPath>$(MelonLoaderPath)\0Harmony.dll</HintPath>
 		</Reference>
-
+ 
 	</ItemGroup>
 
 	<PropertyGroup>

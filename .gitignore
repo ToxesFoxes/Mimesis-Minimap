@@ -402,3 +402,11 @@ FodyWeavers.xsd
 thunderstore/*.dll
 thunderstore/*.md
 Release-thunderstore.zip
+
+# Local MSBuild-config files
+Directory.Build.props.local
+Directory.Build.targets.local
+
+# Ignore local MSBuild-config files in all subdirectories
+*/Directory.Build.props.local
+*/Directory.Build.targets.local

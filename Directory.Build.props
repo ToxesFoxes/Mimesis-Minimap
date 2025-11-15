@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <!-- Importing local paths if they exist -->
+    <Import Project="Directory.Build.props.local" Condition="Exists('Directory.Build.props.local')" />
+
+    <PropertyGroup>
+        <!-- Author -->
+        <Author>ToxesFoxes</Author>
+
+        <!-- Main paths, can be overridden in .local -->
+        <GamePath Condition="'$(GamePath)' == '' AND Exists('C:\Program Files (x86)\Steam\steamapps\common\MIMESIS')">C:\Program Files (x86)\Steam\steamapps\common\MIMESIS</GamePath>
+        <GameExePath Condition="'$(GameExePath)' == ''">$(GamePath)\MIMESIS.exe</GameExePath>
+        <SteamPath Condition="'$(SteamPath)' == '' AND Exists('C:\Program Files (x86)\Steam')">C:\Program Files (x86)\Steam</SteamPath>
+        <SteamExePath Condition="'$(SteamExePath)' == ''">$(SteamPath)\Steam.exe</SteamExePath>
+        <SteamAppID Condition="'$(SteamAppID)' == ''">2827200</SteamAppID>
+        <GameAssemblyPath Condition="'$(GameAssemblyPath)' == ''">$(GamePath)\Mimesis_Data\Managed</GameAssemblyPath>
+        <R2ModManPath Condition="'$(R2ModManPath)' == '' AND Exists('$(APPDATA)\r2modmanPlus-local')">$(APPDATA)\r2modmanPlus-local</R2ModManPath>
+        <ProfileRoot Condition="'$(ProfileRoot)' == ''">$(R2ModManPath)\Mimesis\profiles\Default</ProfileRoot>
+        <ThunderStorePath Condition="'$(ThunderStorePath)' == ''">$(ProfileRoot)</ThunderStorePath>
+        <MelonLoaderPath Condition="'$(MelonLoaderPath)' == ''">$(ProfileRoot)\MelonLoader\net35</MelonLoaderPath>
+        <ModsPath Condition="'$(ModsPath)' == ''">$(ProfileRoot)\Mods</ModsPath>
+		<ModPath Condition="'$(ModPath)' == ''">$(ModsPath)\$(Author)-Minimap</ModPath>
+    </PropertyGroup>
+</Project>
