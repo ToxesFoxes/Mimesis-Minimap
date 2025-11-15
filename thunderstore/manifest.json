@@ -3,5 +3,7 @@
     "version_number": "1.0.5",
     "website_url": "https://github.com/ToxesFoxes/Mimesis-Minimap",
     "description": "A mod for MIMESIS that provides a minimap.",
-    "dependencies": []
+    "dependencies": [
+        "LavaGang-MelonLoader-0.7.1"
+    ]
 }
