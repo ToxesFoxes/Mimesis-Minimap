@@ -8,11 +8,11 @@ namespace Minimap
     internal class Compass
     {
         private List<Vector3> teleporterPositions = new List<Vector3>();
-        private GameObject compassObj;
-        private Text northText, eastText, southText, westText;
-        private Vector2 offset = new Vector2(45, -40);
-        private int heightOffset = 36;
-        private int widthOffset = 36;
+        private GameObject? compassObj;
+        private Text? northText, eastText, southText, westText;
+        private Vector2 offset = new(45, -40);
+        private readonly int heightOffset = 36;
+        private readonly int widthOffset = 36;
         private bool useTeleporterAngle = false;
         private float teleporterAngle = 0f;
 
@@ -32,7 +32,7 @@ namespace Minimap
                 return;
 
             useTeleporterAngle = false;
-            GamePlayScene gamePlayScene = HubAPI.GetGamePlayScene();
+            GamePlayScene? gamePlayScene = HubAPI.GetGamePlayScene();
             if (gamePlayScene != null)
             {
                 teleporterPositions = gamePlayScene.GetTeleporterPositions(gamePlayScene.CheckActorIsIndoor(actor));
@@ -48,7 +48,7 @@ namespace Minimap
             UpdateCompassLabels(baseAngle);
         }
 
-        private float CalculateTeleporterAngle(ProtoActor actor, List<Vector3> teleporters)
+        private static float CalculateTeleporterAngle(ProtoActor actor, List<Vector3> teleporters)
         {
             Vector3 closest = Vector3.zero;
             float minDist = float.MaxValue;

@@ -1,34 +1,34 @@
-﻿using MelonLoader;
+﻿using System.Collections;
+using MelonLoader;
+using Mimic.Actors;
+using Minimap.API;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using Minimap.API;
-using Mimic.Actors;
+using UnityEngine.UI;
 
-[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.4", "ToxesFoxes", null)]
+[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.5", "ToxesFoxes", null)]
 [assembly: MelonGame("ReLUGames", "MIMESIS")]
 
 namespace MiniMap
 {
     public class Core : MelonMod
     {
-        private static GameObject mapRootObj; // Новый общий родитель
-        private static Camera mapCamera;
-        private static RenderTexture mapTexture;
-        private static GameObject mapCanvasObj;
-        private static RawImage mapImage;
-        private static Transform playerTransform;
+        private static GameObject? mapRootObj; // Новый общий родитель
+        private static Camera? mapCamera;
+        private static RenderTexture? mapTexture;
+        private static GameObject? mapCanvasObj;
+        private static RawImage? mapImage;
+        private static Transform? playerTransform;
 
         private static bool isVisible = false;
         private static bool isInDungeon = false;
-        private static InputAction toggleAction;
-        private static ProtoActor player;
+        private static InputAction? toggleAction;
+        private static ProtoActor? player;
 
-        private static float cameraYOffset = 3f; // Глобальная переменная для высоты камеры от позиции игрока по Y
-        private static float nearClipPlane = 1f; // Смещение ближней части камеры
-        private static float farClipPlane = 20f; // Смещение дальней части камеры
+        private static readonly float cameraYOffset = 3f; // Глобальная переменная для высоты камеры от позиции игрока по Y
+        private static readonly float nearClipPlane = 1f; // Смещение ближней части камеры
+        private static readonly float farClipPlane = 20f; // Смещение дальней части камеры
 
         private static readonly Minimap.Compass compass = new();
 
@@ -162,7 +162,7 @@ namespace MiniMap
             if (mapRootObj == null) CreateRoot();
 
             GameObject camObj = new GameObject("MiniMapCamera");
-            camObj.transform.SetParent(mapRootObj.transform, false);
+            camObj.transform.SetParent(mapRootObj!.transform, false);
             mapCamera = camObj.AddComponent<Camera>();
             mapCamera.orthographic = true;
             mapCamera.orthographicSize = 10f; // радиус обзора
@@ -185,7 +185,7 @@ namespace MiniMap
             if (mapRootObj == null) CreateRoot();
 
             mapCanvasObj = new GameObject("MiniMapCanvas");
-            mapCanvasObj.transform.SetParent(mapRootObj.transform, false);
+            mapCanvasObj.transform.SetParent(mapRootObj!.transform, false);
             var canvas = mapCanvasObj.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             mapCanvasObj.AddComponent<CanvasScaler>();
@@ -219,9 +219,10 @@ namespace MiniMap
             compass.CreateCompass(bgObj.transform);
         }
 
-        public static ProtoActor GetCurrentSpectatingActor()
+        public static ProtoActor? GetCurrentSpectatingActor()
         {
             var alivePlayers = ActorAPI.GetAlivePlayers();
+            if (alivePlayers == null) return null;
             if (alivePlayers.Length != 0)
             {
                 var cameraManager = HubAPI.GetCameraManager();
@@ -238,13 +239,13 @@ namespace MiniMap
             return null;
         }
 
-        public static bool IsActorInDungeon(ProtoActor actor)
+        public static bool IsActorInDungeon(ProtoActor? actor)
         {
             if (actor == null) return false;
             return actor?.transform?.position.y < -10f;
         }
 
-        public static void SetCurrentPlayer(ProtoActor newPlayer)
+        public static void SetCurrentPlayer(ProtoActor? newPlayer)
         {
             var oldPlayer = player;
             player = newPlayer;
@@ -305,15 +306,18 @@ namespace MiniMap
                     mapCamera.nearClipPlane = isInDungeon ? nearClipPlane : 0.1f;
                     mapCamera.farClipPlane = isInDungeon ? farClipPlane : 100f;
                 }
-                if (isInDungeon)
+                if (mapImage != null)
                 {
-                    Material greenFilter = new Material(Shader.Find("UI/Default"));
-                    greenFilter.color = new Color(0f, 1f, 0f, 1f); // Зелёный цвет
-                    mapImage.material = greenFilter;
-                }
-                else
-                {
-                    mapImage.material = null;
+                    if (isInDungeon)
+                    {
+                            Material greenFilter = new Material(Shader.Find("UI/Default"));
+                            greenFilter.color = new Color(0f, 1f, 0f, 1f); // Зелёный цвет
+                            mapImage.material = greenFilter;
+                    }
+                    else
+                    {
+                        mapImage.material = null;
+                    }
                 }
 
                 compass.UpdateCompass(player);

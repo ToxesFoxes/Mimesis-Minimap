@@ -4,20 +4,20 @@ namespace Minimap.API
 {
     internal class ActorAPI
     {
-        public static ProtoActor GetLocalPlayer()
+        public static ProtoActor? GetLocalPlayer()
         {
             return FindActorWhere(a => a.AmIAvatar());
         }
-        public static ProtoActor GetActorByID(int? actorID)
+        public static ProtoActor? GetActorByID(int? actorID)
         {
             if (actorID == null) return null;
             return FindActorWhere(a => a.ActorID == actorID);
         }
-        public static ProtoActor[] GetAlivePlayers()
+        public static ProtoActor[]? GetAlivePlayers()
         {
             return FindActorsWhere(a => a.dead == false && a.ActorType == ReluProtocol.Enum.ActorType.Player);
         }
-        public static ProtoActor[] FindActorsWhere(Func<ProtoActor, bool> predicate)
+        public static ProtoActor[]? FindActorsWhere(Func<ProtoActor, bool> predicate)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace Minimap.API
                 return null;
             }
         }
-        public static ProtoActor FindActorWhere(Func<ProtoActor, bool> predicate)
+        public static ProtoActor? FindActorWhere(Func<ProtoActor, bool> predicate)
         {
             try
             {
