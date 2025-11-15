@@ -33,25 +33,47 @@ The mod adds minimap functionality for easier navigation.
 - **MIMESIS** (Steam version)
 - **[MelonLoader](https://github.com/LavaGang/MelonLoader/releases)** v0.7.1 or higher
 - Windows OS
-- .NET Framework 4.7.2 or higher
 
-## 🔧 Installation
+## 🔧 Installation via r2modman
+
+### Step 1: Install r2modman and create profile
+
+1. Download the latest r2modmanplus installer from [GitHub Releases](https://github.com/ebkr/r2modmanPlus/releases)
+2. Run the installer and install launcher, open r2modman and select MIMESIS game
+3. Create a new profile (e.g., "Default")
+
+### Step 2: Install the Mod
+
+##### Option 1: Using r2modman
+
+1. Open r2modman and select your MIMESIS profile
+2. Search for `Minimap` (By ToxesFoxes) in the mod browser
+3. Click "Install" to add the mod to your profile
+
+#### Option 2: Manual Installation
+
+1. Add MelonLoader to the profile
+2. Download `Minimap.dll` from Thunderstore [Releases](https://thunderstore.io/c/mimesis/p/ToxesFoxes/Minimap/versions/) or [Github](https://github.com/ToxesFoxes/Mimesis-Minimap/releases)
+3. Copy `Minimap.dll` to your MIMESIS Mods folder:
+   ```
+   <MIMESIS_Install_Folder>/Mods/Minimap.dll
+   ```
+4. Launch the game
+
+## 🔧 Manual installation
 
 ### Step 1: Install MelonLoader
 
 1. Download the latest MelonLoader installer from [GitHub Releases](https://github.com/LavaGang/MelonLoader/releases)
-2. Run the installer and select your MIMESIS installation folder:
-   - Default Steam location: `C:\Program Files (x86)\Steam\steamapps\common\MIMESIS`
-   - Or right-click MIMESIS in Steam → Manage → Browse local files
+2. Run the installer and select your MIMESIS game from the list
 3. Click Install
-4. Launch the game once to let MelonLoader initialize (game will close automatically)
 
 ### Step 2: Install the Mod
 
 1. Download `Minimap.dll` from Thunderstore [Releases](https://thunderstore.io/c/mimesis/p/ToxesFoxes/Minimap/versions/) or [Github](https://github.com/ToxesFoxes/Mimesis-Minimap/releases)
 2. Copy `Minimap.dll` to your MIMESIS Mods folder:
    ```
-   <MIMESIS_Install_Folder>/Mods/Minimap.dll
+   <profile>/Mods/Minimap.dll
    ```
 3. Launch the game
 
@@ -75,14 +97,17 @@ Contributions are welcome! Please:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ToxesFoxes/Mimesis-Minimap/blob/main/LICENSE) file for details.
 
 ## 🙏 Credits
 
 - **Harmony** - [Harmony Patching Library](https://github.com/pardeike/Harmony)
 - **MelonLoader** - [MelonLoader Mod Loader](https://github.com/LavaGang/MelonLoader)
+- **r2modman** - [r2modmanPlus Mod Manager](https://github.com/ebkr/r2modmanPlus)
+- **Thunderstore** - [Thunderstore Mod Hosting](https://thunderstore.io/)
 - **MIMESIS** - Game by ReLUGames
 - **ToxesFoxes** - Mod development
+- **Rxflex** - For README template inspiration
 
 ## 📞 Support
 
