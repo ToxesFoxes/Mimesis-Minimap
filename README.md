@@ -22,11 +22,14 @@ The mod adds minimap functionality for easier navigation.
 
 ## ✨ Features
 
-- ✅ Minimap display
+- ✅ Minimap (default key to open: F4)
 - ✅ Night vision mode in dungeon
 - ✅ Orthographic map view
-- ✅ Toggle minimap visibility with F4
 - ✅ Compass direction indicator like in-game item
+- ✅ Customizable map size, zoom and position
+- ✅ Customizable map open key and settings key
+- ✅ Settings menu for easy configuration in game (Button in bottom left corner in settings menu) or open with key that can be set in config (default M)
+- ✅ Toggle Dungeon Night Vision mode on/off in minimap settings
 
 ## 📋 Requirements
 
