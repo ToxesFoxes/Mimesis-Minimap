@@ -1,20 +1,24 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using MelonLoader;
 using Mimic.Actors;
+using Minimap;
 using Minimap.API;
+using Minimap.ModCore;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-[assembly: MelonInfo(typeof(MiniMap.Core), "MiniMap", "1.0.5", "ToxesFoxes", null)]
+[assembly: MelonInfo(typeof(Core), "MiniMap", "1.1.0", "ToxesFoxes", null)]
 [assembly: MelonGame("ReLUGames", "MIMESIS")]
 
-namespace MiniMap
+namespace Minimap
 {
     public class Core : MelonMod
     {
-        private static GameObject? mapRootObj; // Новый общий родитель
+        private static GameObject? mapRootObj;
         private static Camera? mapCamera;
         private static RenderTexture? mapTexture;
         private static GameObject? mapCanvasObj;
@@ -23,21 +27,34 @@ namespace MiniMap
 
         private static bool isVisible = false;
         private static bool isInDungeon = false;
+        private static bool manualDungeonMode = false; // used when DungeonModeAuto == false
         private static InputAction? toggleAction;
+        private static InputAction? settingsAction;
         private static ProtoActor? player;
+        private static RectTransform? mapBgRect;
+        private static MimicUI.SettingsPage? settingsPage;
 
-        private static readonly float cameraYOffset = 3f; // Глобальная переменная для высоты камеры от позиции игрока по Y
-        private static readonly float nearClipPlane = 1f; // Смещение ближней части камеры
-        private static readonly float farClipPlane = 20f; // Смещение дальней части камеры
+        private static CursorLockMode _prevCursorLockMode = CursorLockMode.Locked;
+        private static bool _prevCursorVisible = false;
+        private static readonly List<PlayerInput> _suspendedInputs = new();
 
-        private static readonly Minimap.Compass compass = new();
+        private static readonly float cameraYOffset = 3f;
+        private static readonly float nearClipPlane = 1f;
+        private static readonly float farClipPlane = 20f;
+
+        private const float zoomMin = 3f;
+        private const float zoomMax = 40f;
+        private static float OrthoFromZoom(float zoom) => zoomMin + zoomMax - zoom;
+
+        private static readonly ModCore.Compass compass = new();
 
         public override void OnInitializeMelon()
         {
-            MelonLogger.Msg("MiniMap initialized. Press F4 to toggle minimap.");
+            Settings.Initialize();
+            MelonLogger.Msg($"MiniMap initialized. Press {Settings.ToggleKey?.Value ?? "F4"} to toggle minimap.");
             SetupInput();
+            SetupSettingsInput();
 
-            // Подписываемся на события смены сцены
             SceneManager.sceneLoaded += OnSceneLoaded;
 
             MelonLogger.Msg("MiniMap setup complete.");
@@ -48,10 +65,10 @@ namespace MiniMap
         {
             MelonLogger.Msg($"Scene loaded: {scene.name}, minimap was visible: {isVisible}");
 
-            // Сбрасываем ссылку на игрока
             playerTransform = null;
+            SettingsInjector.Reset();
+            settingsPage = null;
 
-            // Уничтожаем старые объекты
             DestroyUI();
             DestroyCamera();
             DestroyRoot();
@@ -77,11 +94,124 @@ namespace MiniMap
 
         private static void SetupInput()
         {
+            toggleAction?.actionMap?.Disable();
+
             var actions = new InputActionMap("MiniMap");
-            toggleAction = actions.AddAction("Toggle", binding: "<Keyboard>/f4");
+            toggleAction = actions.AddAction("Toggle", binding: Settings.GetToggleBinding());
             toggleAction.performed += _ => ToggleMap();
 
             actions.Enable();
+        }
+
+        public static void RefreshToggleKey() => SetupInput();
+
+        public static void RefreshSettingsKey() => SetupSettingsInput();
+
+        private static void SetupSettingsInput()
+        {
+            settingsAction?.actionMap?.Disable();
+
+            var actions = new InputActionMap("MiniMap_Settings");
+            settingsAction = actions.AddAction("OpenSettings");
+
+            var modIdx = Mathf.Clamp(Settings.SettingsModifier?.Value ?? 1, 0, Settings.ModifierPaths.Length - 1);
+            var modPath = Settings.ModifierPaths[modIdx];
+
+            if (modIdx == 0)
+            {
+                settingsAction.AddBinding(Settings.GetSettingsKeyPath());
+            }
+            else
+            {
+                settingsAction.AddCompositeBinding("ButtonWithOneModifier")
+                    .With("Modifier", modPath)
+                    .With("Button", Settings.GetSettingsKeyPath());
+            }
+
+            settingsAction.performed += _ => ToggleSettingsPanel();
+            actions.Enable();
+        }
+
+        private static void CreateSettingsUI()
+        {
+            var topCanvas = API.UIManagerAPI.GetTopCanvas();
+            if (topCanvas == null)
+            {
+                MelonLogger.Warning("[MiniMap] Hub/UIManager/Canvas/1 - top not found, settings UI deferred.");
+                return;
+            }
+
+            settingsPage = new MimicUI.SettingsPage(topCanvas);
+            settingsPage.Hide();
+            MelonLogger.Msg("[MiniMap] Settings UI created in Hub/UIManager/Canvas/1 - top.");
+        }
+
+        public static void ToggleSettingsPanel()
+        {
+            if (settingsPage == null || !settingsPage.IsValid)
+            {
+                settingsPage = null;
+                CreateSettingsUI();
+            }
+
+            bool wasVisible = settingsPage?.IsVisible == true;
+            settingsPage?.Toggle();
+            bool isNowVisible = settingsPage?.IsVisible == true;
+
+            if (!wasVisible && isNowVisible)
+                OnSettingsOpened();
+            else if (wasVisible && !isNowVisible)
+                OnSettingsClosed();
+
+            MelonLogger.Msg($"[MiniMap] Settings panel: {(isNowVisible ? "shown" : "hidden")}");
+        }
+
+        private static void OnSettingsOpened()
+        {
+            _prevCursorLockMode = Cursor.lockState;
+            _prevCursorVisible = Cursor.visible;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            _suspendedInputs.Clear();
+            var allInputs = UnityEngine.Object.FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
+            foreach (var pi in allInputs)
+            {
+                pi.DeactivateInput();
+                _suspendedInputs.Add(pi);
+            }
+        }
+
+        private static void OnSettingsClosed()
+        {
+            Cursor.lockState = _prevCursorLockMode;
+            Cursor.visible = _prevCursorVisible;
+
+            foreach (var pi in _suspendedInputs)
+                if (pi != null) pi.ActivateInput();
+            _suspendedInputs.Clear();
+        }
+
+        public static void RefreshCompassVisibility()
+        {
+            compass.SetVisible(Settings.CompassVisible?.Value ?? true);
+        }
+
+        public static void RefreshMapPosition()
+        {
+            ApplyPosition(Settings.Position);
+        }
+
+        public static void RefreshMapZoom(float zoom)
+        {
+            if (mapCamera != null)
+                mapCamera.orthographicSize = OrthoFromZoom(zoom);
+        }
+
+        public static void RefreshMapSize(float size)
+        {
+            if (mapBgRect != null)
+                mapBgRect.sizeDelta = new Vector2(size, size);
         }
 
         private static void DestroyUI()
@@ -92,6 +222,7 @@ namespace MiniMap
                 GameObject.Destroy(mapCanvasObj);
                 mapCanvasObj = null;
                 mapImage = null;
+                mapBgRect = null;
             }
         }
 
@@ -165,16 +296,15 @@ namespace MiniMap
             camObj.transform.SetParent(mapRootObj!.transform, false);
             mapCamera = camObj.AddComponent<Camera>();
             mapCamera.orthographic = true;
-            mapCamera.orthographicSize = 10f; // радиус обзора
+            mapCamera.orthographicSize = OrthoFromZoom(Settings.MapZoom?.Value ?? 33f);
             mapCamera.clearFlags = CameraClearFlags.SolidColor;
-            mapCamera.backgroundColor = new Color(0f, 0f, 0f, 0f); // Прозрачный фон
-            mapCamera.cullingMask = ~0; // всё кроме UI
+            mapCamera.backgroundColor = new Color(0f, 0f, 0f, 0f);
+            mapCamera.cullingMask = ~0;
 
             mapTexture = new RenderTexture(512, 512, 16, RenderTextureFormat.ARGB32);
             mapTexture.Create();
             mapCamera.targetTexture = mapTexture;
 
-            // Настройка обрезки камеры
             mapCamera.nearClipPlane = isInDungeon ? nearClipPlane : 0.1f;
             mapCamera.farClipPlane = isInDungeon ? farClipPlane : 100f;
         }
@@ -191,20 +321,17 @@ namespace MiniMap
             mapCanvasObj.AddComponent<CanvasScaler>();
             mapCanvasObj.AddComponent<GraphicRaycaster>();
 
-            // фон
             var bgObj = new GameObject("MiniMapBG");
             bgObj.transform.SetParent(mapCanvasObj.transform, false);
             var bg = bgObj.AddComponent<Image>();
             bg.color = new Color(0f, 0f, 0f, 0.4f);
 
             var bgRect = bg.GetComponent<RectTransform>();
-            bgRect.anchorMin = new Vector2(1f, 0f);
-            bgRect.anchorMax = new Vector2(1f, 0f);
-            bgRect.pivot = new Vector2(1f, 0f);
-            bgRect.anchoredPosition = new Vector2(-10f, 10f);
-            bgRect.sizeDelta = new Vector2(256f, 256f);
+            var mapSize = Settings.MapSize?.Value ?? 256f;
+            bgRect.sizeDelta = new Vector2(mapSize, mapSize);
+            ApplyPosition(Settings.Position, bgRect);
+            mapBgRect = bgRect;
 
-            // картинка миникарты
             var mapObj = new GameObject("MiniMapImage");
             mapObj.transform.SetParent(bgObj.transform, false);
             mapImage = mapObj.AddComponent<RawImage>();
@@ -217,6 +344,80 @@ namespace MiniMap
             mapRect.offsetMax = new Vector2(-5f, -5f);
 
             compass.CreateCompass(bgObj.transform);
+            compass.SetVisible(Settings.CompassVisible?.Value ?? true);
+        }
+
+        private static void ApplyPosition(MinimapPosition position, RectTransform? bgRect = null)
+        {
+            if (bgRect == null)
+            {
+                if (mapCanvasObj == null) return;
+                var bgGo = mapCanvasObj.transform.Find("MiniMapBG");
+                if (bgGo == null) return;
+                bgRect = bgGo.GetComponent<RectTransform>();
+                if (bgRect == null) return;
+            }
+
+            const float margin = 10f;
+            switch (position)
+            {
+                case MinimapPosition.TopLeft:
+                    bgRect.anchorMin = new Vector2(0f, 1f);
+                    bgRect.anchorMax = new Vector2(0f, 1f);
+                    bgRect.pivot     = new Vector2(0f, 1f);
+                    bgRect.anchoredPosition = new Vector2(margin, -margin);
+                    break;
+                case MinimapPosition.TopCenter:
+                    bgRect.anchorMin = new Vector2(0.5f, 1f);
+                    bgRect.anchorMax = new Vector2(0.5f, 1f);
+                    bgRect.pivot     = new Vector2(0.5f, 1f);
+                    bgRect.anchoredPosition = new Vector2(0f, -margin);
+                    break;
+                case MinimapPosition.TopRight:
+                    bgRect.anchorMin = new Vector2(1f, 1f);
+                    bgRect.anchorMax = new Vector2(1f, 1f);
+                    bgRect.pivot     = new Vector2(1f, 1f);
+                    bgRect.anchoredPosition = new Vector2(-margin, -margin);
+                    break;
+                case MinimapPosition.MiddleLeft:
+                    bgRect.anchorMin = new Vector2(0f, 0.5f);
+                    bgRect.anchorMax = new Vector2(0f, 0.5f);
+                    bgRect.pivot     = new Vector2(0f, 0.5f);
+                    bgRect.anchoredPosition = new Vector2(margin, 0f);
+                    break;
+                case MinimapPosition.MiddleRight:
+                    bgRect.anchorMin = new Vector2(1f, 0.5f);
+                    bgRect.anchorMax = new Vector2(1f, 0.5f);
+                    bgRect.pivot     = new Vector2(1f, 0.5f);
+                    bgRect.anchoredPosition = new Vector2(-margin, 0f);
+                    break;
+                case MinimapPosition.BottomLeft:
+                    bgRect.anchorMin = new Vector2(0f, 0f);
+                    bgRect.anchorMax = new Vector2(0f, 0f);
+                    bgRect.pivot     = new Vector2(0f, 0f);
+                    bgRect.anchoredPosition = new Vector2(margin, margin);
+                    break;
+                case MinimapPosition.BottomCenter:
+                    bgRect.anchorMin = new Vector2(0.5f, 0f);
+                    bgRect.anchorMax = new Vector2(0.5f, 0f);
+                    bgRect.pivot     = new Vector2(0.5f, 0f);
+                    bgRect.anchoredPosition = new Vector2(0f, margin);
+                    break;
+                default: // BottomRight
+                    bgRect.anchorMin = new Vector2(1f, 0f);
+                    bgRect.anchorMax = new Vector2(1f, 0f);
+                    bgRect.pivot     = new Vector2(1f, 0f);
+                    bgRect.anchoredPosition = new Vector2(-margin, margin);
+                    break;
+                case MinimapPosition.Manual:
+                    bgRect.anchorMin = new Vector2(0.5f, 0.5f);
+                    bgRect.anchorMax = new Vector2(0.5f, 0.5f);
+                    bgRect.pivot     = new Vector2(0.5f, 0.5f);
+                    bgRect.anchoredPosition = new Vector2(
+                        Settings.MapPosX?.Value ?? 0f,
+                        Settings.MapPosY?.Value ?? 0f);
+                    break;
+            }
         }
 
         public static ProtoActor? GetCurrentSpectatingActor()
@@ -242,7 +443,14 @@ namespace MiniMap
         public static bool IsActorInDungeon(ProtoActor? actor)
         {
             if (actor == null) return false;
+            if (Settings.DungeonModeAuto?.Value == false)
+                return manualDungeonMode;
             return actor?.transform?.position.y < -10f;
+        }
+
+        public static void SetManualDungeonMode(bool value)
+        {
+            manualDungeonMode = value;
         }
 
         public static void SetCurrentPlayer(ProtoActor? newPlayer)
@@ -270,6 +478,8 @@ namespace MiniMap
 
         public override void OnLateUpdate()
         {
+            SettingsInjector.TryInject();
+
             if (!isVisible || mapCamera == null) return;
 
             var localPlayer = ActorAPI.GetLocalPlayer();

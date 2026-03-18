@@ -1,4 +1,5 @@
 ﻿using MelonLoader;
+using Minimap.ModCore;
 
 namespace Minimap.API
 {

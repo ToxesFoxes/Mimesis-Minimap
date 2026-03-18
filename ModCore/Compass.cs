@@ -3,7 +3,7 @@ using Minimap.API;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Minimap
+namespace Minimap.ModCore
 {
     internal class Compass
     {
@@ -24,6 +24,12 @@ namespace Minimap
                 compassObj = null;
                 northText = eastText = southText = westText = null;
             }
+        }
+
+        public void SetVisible(bool visible)
+        {
+            if (compassObj != null)
+                compassObj.SetActive(visible);
         }
 
         public void UpdateCompass(ProtoActor actor)

@@ -671,12 +671,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Include="API\ActorAPI.cs" />
-		<Compile Include="Compass.cs" />
-		<Compile Include="Core.cs" />
-		<Compile Include="API\HubAPI.cs" />
-		<Compile Include="API\UnityObjectAPI.cs" />
-		<Compile Include="Helpers.cs" />
+		<Compile Include="ModCore/**/*" />
+		<Compile Include="API/**/*" />
+		<Compile Include="MimicUI/**/*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Core.cs" />
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

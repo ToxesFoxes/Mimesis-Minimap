@@ -1,6 +1,6 @@
 {
     "name": "Minimap",
-    "version_number": "1.0.5",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/ToxesFoxes/Mimesis-Minimap",
     "description": "A mod for MIMESIS that provides a minimap.",
     "dependencies": [

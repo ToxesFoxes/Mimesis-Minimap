@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using MelonLoader;
 
-namespace Minimap
+namespace Minimap.ModCore
 {
     internal class Helpers
     {
