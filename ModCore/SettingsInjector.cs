@@ -23,8 +23,6 @@ namespace Minimap.ModCore
         {
             if (_injected) return;
 
-            Test.TryRun();
-
             var root = API.UIManagerAPI.GetGameSettingsRoot();
             if (root == null) return;
 
