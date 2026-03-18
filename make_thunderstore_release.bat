@@ -2,7 +2,7 @@
 REM Windows batch script to create Thunderstore release
 
 REM Copy the compiled DLL to thunderstore directory
-copy ".\bin\Release\netstandard2.1\Minimap.dll" ".\thunderstore\Minimap.dll"
+copy ".\bin\x64\Release\netstandard2.1\Minimap.dll" ".\thunderstore\Minimap.dll"
 if %errorlevel% neq 0 (
     echo Failed to copy Minimap.dll
     exit /b 1
